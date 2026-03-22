@@ -17,7 +17,9 @@ export interface Participant {
 export interface Workshop {
 	id: number;
 	title: string;
-	time: string;
+	date: string;
+	start: string;
+	end: string;
 	place: string;
 	max_participants: number;
 	participants: Participant[];

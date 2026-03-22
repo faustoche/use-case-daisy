@@ -11,7 +11,7 @@ export function LoadingState() {
 
 // 2nd composant: état vide 
 export function EmptyState({ message }: { message: string }) {
-	return <p className="text-gray-500 italic">{message}</p>;
+	return <p className="text-lg font-medium text-gray-600">{message}</p>;
 }
 
 // 3rd composant: erreur

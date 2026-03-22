@@ -8,7 +8,9 @@ export const WorkshopMock: Workshop[] = [
 	{
 		id: 1,
 		title: "Crochet - Débutant",
-		time: "10:00 - 11:00",
+		date: "Dim. 26 avril 2026",
+		start: "10h00",
+		end: "11h00",
 		place: "Workshop A",
 		max_participants: 5,
 		participants: [
@@ -22,21 +24,35 @@ export const WorkshopMock: Workshop[] = [
 	{
 		id: 2,
 		title: "Crochet - Avancée",
-		time: "10:00 - 11:00",
+		date: "Lun. 27 avril 2026",
+		start: "10h00",
+		end: "11h00",
 		place: "Workshop B",
-		max_participants: 5,
+		max_participants: 25,
 		participants: [
 			{ id: 1, name: "Axel", first_name: "Carpentier", status: "absent" },
 			{ id: 2, name: "Clémence", first_name: "Léger", status: "pending" },
 			{ id: 3, name: "Alexia", first_name: "Duval", status: "present" },
 			{ id: 4, name: "Marc", first_name: "Prudhomme", status: "absent" },
 			{ id: 5, name: "Lou", first_name: "Fouché", status: "pending" },
+			{ id: 6, name: "Julien", first_name: "Morel", status: "present" },
+			{ id: 7, name: "Sophie", first_name: "Renaud", status: "absent" },
+			{ id: 8, name: "Thomas", first_name: "Giraud", status: "pending" },
+			{ id: 9, name: "Camille", first_name: "Blanchard", status: "present" },
+			{ id: 10, name: "Lucas", first_name: "Barbier", status: "absent" },
+			{ id: 11, name: "Emma", first_name: "Chevalier", status: "pending" },
+			{ id: 12, name: "Nathan", first_name: "Perrin", status: "present" },
+			{ id: 13, name: "Chloé", first_name: "Marchand", status: "absent" },
+			{ id: 14, name: "Hugo", first_name: "Colin", status: "pending" },
+			{ id: 15, name: "Manon", first_name: "Leclerc", status: "present" },
 		]
 	},
 	{
 		id: 3,
 		title: "Tricot - Débutant",
-		time: "15:00 - 17:00",
+		date: "Mar. 28 avril 2026",
+		start: "10h00",
+		end: "11h00",
 		place: "Workshop A",
 		max_participants: 5,
 		participants: [
@@ -50,7 +66,9 @@ export const WorkshopMock: Workshop[] = [
 	{
 		id: 4,
 		title: "Tricot - Avancée",
-		time: "15:00 - 17:00",
+		date: "Mer. 29 avril 2026",
+		start: "10h00",
+		end: "11h00",
 		place: "Workshop B",
 		max_participants: 5,
 		participants: [
