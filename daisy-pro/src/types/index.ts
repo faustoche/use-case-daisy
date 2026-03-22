@@ -1,8 +1,10 @@
-// On définit la forme de nos données
-// On déclare des entités
-// On centralise les définitions des données qu'on va utiliser tout au long du projet
+/**
+ * Defining data forms
+ * Declaring entities
+ * Gathering data definitions used for the app
+ */
 
-// Attendance type
+// Participant can only be one of this 3 values
 export type AttendanceStatus = "pending" | "present" | "absent"
 
 // Participant interface
