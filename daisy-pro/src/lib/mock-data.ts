@@ -8,7 +8,7 @@ import { Workshop } from "@/types";
 export const WorkshopMock: Workshop[] = [
 	{
 		id: 1,
-		title: "Crochet - Débutant",
+		title: "Crochet",
 		date: "Dim. 26 avril 2026",
 		start: "10h00",
 		end: "11h00",
@@ -24,7 +24,7 @@ export const WorkshopMock: Workshop[] = [
 	},
 	{
 		id: 2,
-		title: "Crochet - Avancée",
+		title: "Crochet",
 		date: "Lun. 27 avril 2026",
 		start: "10h00",
 		end: "11h00",
@@ -50,7 +50,7 @@ export const WorkshopMock: Workshop[] = [
 	},
 	{
 		id: 3,
-		title: "Tricot - Débutant",
+		title: "Tricot",
 		date: "Mar. 28 avril 2026",
 		start: "10h00",
 		end: "11h00",
@@ -66,7 +66,7 @@ export const WorkshopMock: Workshop[] = [
 	},
 	{
 		id: 4,
-		title: "Tricot - Avancée",
+		title: "Tricot",
 		date: "Mer. 29 avril 2026",
 		start: "10h00",
 		end: "11h00",
