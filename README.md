@@ -1,6 +1,11 @@
 # use-case-daisy 🌸
 
-> **Daisy Pro:** Presence and Check-in feature. A mobile-first Next.js application designed for daily workshop management.
+> **Daisy Pro:** Presence and Check-in feature.
+A mobile-first Next.js application designed for daily workshop management.
+
+---
+
+## Tech stack
 
 ![TypeScript](https://img.shields.io/badge/TypeScript-3178C6?logo=typescript&logoColor=white)
 ![Next.js](https://img.shields.io/badge/Next.js-000000?logo=next.js&logoColor=white)
@@ -11,7 +16,11 @@
 
 ## Getting started
 
-**Requirements:** Node.js (v18+ & npm)
+**Requirements:** 
+- Node.js (v18+)
+- npm
+
+### Installation
 
 ```bash
 git clone git@github.com:faustoche/use-case-daisy.git
@@ -20,7 +29,7 @@ npm install
 npm run dev
 ```
 
-App is running at **http://localhost:3000**
+▶ App is running at **http://localhost:3000**
 
 ---
 
@@ -28,35 +37,61 @@ App is running at **http://localhost:3000**
 
 The goal of this feature is to allow an artist to take attendance for their daily workshop in under 30 seconds, directly from their smartphone. 
 
-The flow is divided into two views:
-• **Dashboard (home):** Overview of today's workshop with dynamic participant counters and a list of scheduled sessions.
-• **Workshop details:** List of registered participants with a check-in in a single tap.
+### User flow
+1. **Dashboard (Home)**
+	• Overview of daily workshop
+	• Dynamic participant counters
+	• List of scheduled sessions with name, date, place and number of participants
+
+2. **Workshop details**
+	• List of registered participants
+	• Toggle check-in
+	• Immediate UI feedback (no need to wait for server)
 
 ---
 
-# Architecture & Component
+## Architecture & Component
 
-• **WorkshipList.tsx:** Receives workshop data and handles rendering as a card
+• ```bash WorkshipList.tsx```
+- Renders workshop data as cards
+- Receives data thanks to props
 
-• **WorkshopDetail.tsx:** Participants are managed with a local state for immediate responsiveness for the user. Avoid waiting for server confirmation.
+• ```bash WorkshipDetail.tsx```
+- Manages participants with local state
+- Optimized for instant responsiveness (no server delay)
 
-• **StatusViews.tsx:** Central logic for application states (loading, empty, error). Ensure consistency across this app.
+• ```bash StatusViews.tsx```
+- Centralized UI states:
+	• loading
+	• empty
+	• error
 
-• **actions.ts:** Server logic. Simulates a network request with setTimeout
-
-• **WorkshipList.tsx:** Receives workshop data and handles rendering as a card
+• ```bash actions.ts```
+- Server-side logic
+- Simulates API calls using setTimeout
 
 ---
 
-# UI and UX decisions
+## UI and UX decisions
 
-• **Brand guidelines:** Implementation of the requested color palette. Purple (#800080) for the main action, Coral (#F24E3E) for details and Cream (#FCF8E8) for a soft background.
+- **Design system:**
+	• Primary: Purple #800080
+	• Accent: Coral #F24E3E
+	• Background: Cream #FCF8E8
 
-• **Visual feedback for user:** Clicking on a row changes background color, and check icon to insure validation. A progress bar is visible and updated in real-time to confirm the user it was registered.
+- **User feedback:**
+	• Click on the row: visual highlight
+	• Check icon: validation confirmation
+	• Real-time progress bar: immediat feedback
 
-• **Handling 4 states:**
-	- success: standard data rendering
-	- loading: a spinning wheel is displayed while waiting for data
-	- empty: a specific page is displayed if a URL points to non-existent workshop
-	- error: component ready to appear for any failures
+- **Application states:**
+	• Success: normal data rendering
+	• Loading: spinner displayed
+	• Empty: custom empty state when no workshop is found
+	• Error: error UI for failures
 
+---
+
+## Goal
+
+Deliver a fast, intuitive, mobile-first experience for workshop attendance tracking.
