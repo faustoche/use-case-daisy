@@ -15,7 +15,7 @@ export default function Home() {
 		<main className="flex flex-col min-h-screen pb-6">
 
 		<header className="flex items-center justify-between px-4 py-4 bg-daisy-primary shadow-md mb-2">
-			<img src="/logo_daisy.png" alt="logo" className="w-10 h-10 object-contain brightness-0 invert" />
+			<img src="/logo_daisy_white.png" alt="logo" className="w-10 h-10 object-contain" />
 			
 			<div className="flex items-center gap-3">
 				<span className="text-base font-semibold tracking-tight text-white">Tempo</span>

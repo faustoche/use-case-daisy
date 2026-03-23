@@ -27,7 +27,7 @@ export default function RootLayout({
 
 			<body className={`${geistSans.className} bg-daisy-bg text-daisy-text flex justify-center min-h-screen`}>
 				
-				<div className="bg-white w-full max-w-[414px] min-h-screen shadow-2xl flex flex-col relative overflow-hidden">
+				<div className="bg-daisy-bg w-full max-w-[414px] min-h-screen shadow-2xl flex flex-col relative overflow-hidden">
 					{children}
 				</div>
 				

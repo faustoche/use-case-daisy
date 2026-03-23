@@ -2,6 +2,8 @@
 
 import { useState } from "react";
 import { Workshop } from "@/types";
+import { updateParticipantStatus } from "@/lib/actions";
+import { LoadingState, ErrorState } from "./StatusViews";
 import { ArrowLeft, Calendar, Clock, MapPin, Users, Check } from "lucide-react";
 import Link from "next/link";
 
@@ -17,18 +19,33 @@ export function WorkshopDetailClient({ data }: Props) {
 	// setPresent = function to modify the list
 	// [] = starting with empty list
 	const [present, setPresent] = useState<number[]>([]);
+	const [loadingId, setLoadingId] = useState<number[]>([]);
+	const [error, setError] = useState<string | null>(null);
 
 
-	// is Id in the list? Yes -> we keep everyone except the one we click on
-	// No -> copy of the list (... to copy elements)
-	const countAsPresent = (id: number) => {
+	// Activating loading mode for a specific participant
+	// Determine futur status and calling server action
+	// If request succeed, update
+	const countAsPresent = async (id: number) => {
 
-		if (present.includes(id)) {
-			const newList = present.filter(participant => participant !== id);
-			setPresent(newList);
-		} else {
-			const newList = [...present, id];
-			setPresent(newList);
+		setLoadingId(prev => [...prev, id]);
+		setError(null);
+
+		try {
+			const newStatus = present.includes(id) ? "absent" : "present";
+			await updateParticipantStatus(data.id, id, newStatus as any);
+
+			setPresent((prevPresent) => {
+				if (prevPresent.includes(id)) {
+					return prevPresent.filter(participantId => participantId !== id);
+				} else {
+					return [...prevPresent, id];
+				}
+			});
+		} catch (error) {
+			setError("Cannot update participants status");
+		} finally {
+			setLoadingId(prev => prev.filter(loadingId => loadingId !== id));
 		}
 	};
 
@@ -62,25 +79,27 @@ export function WorkshopDetailClient({ data }: Props) {
 			</header>
 
 
-			<div className="bg-white px-4 py-3 flex items-center justify-between border-b border-gray-100">
+			<div className="bg-daisy-bg px-4 py-3 flex items-center justify-between border-b border-gray-200">
 				<div className="flex items-center gap-2 text-sm text-gray-600">
 				<Users className="w-4 h-4" />
 				<span><span className="font-bold text-daisy-accent">{presentCount}</span> / {total} présents</span>
 				</div>
 
-				<div className="w-32 h-2 bg-gray-100 rounded-full overflow-hidden">
+				<div className="w-32 h-2 bg-gray-200 rounded-full overflow-hidden">
 				<div className="h-full bg-daisy-accent rounded-full transition-all duration-300" style={{ width: total > 0 ? `${(presentCount / total) * 100}%` : "0%" }}/>
 				</div>
 			</div>
 
-			<section className="px-4 py-4 flex flex-col gap-2 bg-white flex-1">
+			<section className="px-4 py-4 flex flex-col gap-2 bg-daisy-bg flex-1">
+				{error && <div className="mb-2"><ErrorState error={error} /></div>}
 				{data.participants.map((participant, index) => {
 
 				const isPresent = present.includes(participant.id);
+				const isLoading = loadingId.includes(participant.id);
 				const color = index % 2 === 0 ? "border-l-daisy-primary" : "border-l-daisy-accent";
 
 				return (
-					<button key={participant.id} onClick={() => countAsPresent(participant.id)} className={`w-full flex items-center justify-between p-4 rounded-xl border border-gray-100 border-l-4 ${color} shadow-sm text-left transition-colors duration-150 ${isPresent ? "bg-purple-50" : "bg-white"}`}>
+					<button key={participant.id} onClick={() => countAsPresent(participant.id)} disabled={isLoading} className={`w-full flex items-center justify-between p-4 rounded-xl border border-gray-100 border-l-4 ${color} shadow-sm text-left transition-colors duration-150 ${isPresent ? "bg-purple-50" : "bg-white"}`}>
 
 					<div className="flex items-center gap-3">
 
@@ -97,7 +116,7 @@ export function WorkshopDetailClient({ data }: Props) {
 					</div>
 
 					<div className={`w-7 h-7 rounded-full border-2 flex items-center justify-center flex-shrink-0 transition-all duration-150 ${isPresent ? "bg-daisy-primary border-daisy-primary" : "border-gray-200 bg-white"}`}>
-						{isPresent && <Check className="w-4 h-4 text-white" strokeWidth={3} />}
+						{isLoading ? (<LoadingState />) : (isPresent && <Check className="w-4 h-4 text-white" strokeWidth={3} />)}
 					</div>
 					</button>
 				);
