@@ -3,6 +3,8 @@
 > **Daisy Pro:** Presence and Check-in feature.
 A mobile-first Next.js application designed for daily workshop management.
 
+**Live Demo:** https://use-case-daisy.vercel.app/
+
 ---
 
 ## Tech stack
