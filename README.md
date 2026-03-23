@@ -16,7 +16,8 @@ A mobile-first Next.js application designed for daily workshop management.
 
 ## Getting started
 
-**Requirements:** 
+### Requirements
+
 - Node.js (v18+)
 - npm
 
@@ -52,21 +53,21 @@ The goal of this feature is to allow an artist to take attendance for their dail
 
 ## Architecture & Component
 
-• ```bash WorkshipList.tsx```
+• ``` WorkshipList.tsx```
 - Renders workshop data as cards
 - Receives data thanks to props
 
-• ```bash WorkshipDetail.tsx```
+• ``` WorkshipDetail.tsx```
 - Manages participants with local state
 - Optimized for instant responsiveness (no server delay)
 
-• ```bash StatusViews.tsx```
+• ``` StatusViews.tsx```
 - Centralized UI states:
 	• loading
 	• empty
 	• error
 
-• ```bash actions.ts```
+• ``` actions.ts```
 - Server-side logic
 - Simulates API calls using setTimeout
 
@@ -74,21 +75,21 @@ The goal of this feature is to allow an artist to take attendance for their dail
 
 ## UI and UX decisions
 
-- **Design system:**
-	• Primary: Purple #800080
-	• Accent: Coral #F24E3E
-	• Background: Cream #FCF8E8
+• **Design system:**
+- Primary: Purple #800080
+- Accent: Coral #F24E3E
+- Background: Cream #FCF8E8
 
-- **User feedback:**
-	• Click on the row: visual highlight
-	• Check icon: validation confirmation
-	• Real-time progress bar: immediat feedback
+• **User feedback:**
+- Click on the row: visual highlight
+- Check icon: validation confirmation
+- Real-time progress bar: immediat feedback
 
-- **Application states:**
-	• Success: normal data rendering
-	• Loading: spinner displayed
-	• Empty: custom empty state when no workshop is found
-	• Error: error UI for failures
+• **Application states:**
+- Success: normal data rendering
+- Loading: spinner displayed
+- Empty: custom empty state when no workshop is found
+- Error: error UI for failures
 
 ---
 
