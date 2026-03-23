@@ -24,7 +24,7 @@ App is running at **http://localhost:3000**
 
 ---
 
-**## The feature: Presence & Check-in (Option A)**
+## The feature: Presence & Check-in (Option A)
 
 The goal of this feature is to allow an artist to take attendance for their daily workshop in under 30 seconds, directly from their smartphone. 
 
@@ -32,7 +32,9 @@ The flow is divided into two views:
 • **Dashboard (home):** Overview of today's workshop with dynamic participant counters and a list of scheduled sessions.
 • **Workshop details:** List of registered participants with a check-in in a single tap.
 
-**# Architecture & Component**
+---
+
+# Architecture & Component
 
 • **WorkshipList.tsx:** Receives workshop data and handles rendering as a card
 
@@ -44,7 +46,9 @@ The flow is divided into two views:
 
 • **WorkshipList.tsx:** Receives workshop data and handles rendering as a card
 
-**# UI and UX decisions**
+---
+
+# UI and UX decisions
 
 • **Brand guidelines:** Implementation of the requested color palette. Purple (#800080) for the main action, Coral (#F24E3E) for details and Cream (#FCF8E8) for a soft background.
 
@@ -56,4 +60,3 @@ The flow is divided into two views:
 	- empty: a specific page is displayed if a URL points to non-existent workshop
 	- error: component ready to appear for any failures
 
-	
