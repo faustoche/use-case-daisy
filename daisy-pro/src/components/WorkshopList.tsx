@@ -14,7 +14,7 @@ interface WorkshopListProps {
 export function WorkshopList({ workshop, index }: WorkshopListProps) {
 	const isFull = workshop.participants.length >= workshop.max_participants;
 
-	const accentColor = index % 2 === 0 ? "border-l-daisy-primary" : "border-l-daisy-accent";
+	const color = index % 2 === 0 ? "border-l-daisy-primary" : "border-l-daisy-accent";
 	const badgeColor = isFull
 		? "bg-red-100 text-red-600"
 		: "bg-purple-50 text-daisy-primary";
@@ -22,7 +22,7 @@ export function WorkshopList({ workshop, index }: WorkshopListProps) {
 	return (
 		<Link
 			href={`/workshop/${workshop.id}`}
-			className={`flex justify-between items-center p-4 rounded-xl border border-gray-100 border-l-4 ${accentColor} shadow-sm bg-white hover:bg-daisy-bg/40 transition-colors duration-150`}
+			className={`flex justify-between items-center p-4 rounded-xl border border-gray-100 border-l-4 ${color} shadow-sm bg-white hover:bg-daisy-bg/40 transition-colors duration-150`}
 		>
 			<div className="flex flex-col gap-2">
 				<span className="text-base font-bold text-gray-900">{workshop.title}</span>
