@@ -19,7 +19,7 @@ export function WorkshopDetailClient({ data }: Props) {
 	// setPresent = function to modify the list
 	// [] = starting with empty list
 	const [present, setPresent] = useState<number[]>([]);
-	const [loadingId, setLoadingId] = useState<number[]>([]);
+	const [loadingId, setLoadingIds] = useState<number[]>([]);
 	const [error, setError] = useState<string | null>(null);
 
 
@@ -28,7 +28,7 @@ export function WorkshopDetailClient({ data }: Props) {
 	// If request succeed, update
 	const countAsPresent = async (id: number) => {
 
-		setLoadingId(prev => [...prev, id]);
+		setLoadingIds(prev => [...prev, id]);
 		setError(null);
 
 		try {
@@ -45,7 +45,7 @@ export function WorkshopDetailClient({ data }: Props) {
 		} catch (error) {
 			setError("Cannot update participants status");
 		} finally {
-			setLoadingId(prev => prev.filter(loadingId => loadingId !== id));
+			setLoadingIds(prev => prev.filter(loadingIds => loadingIds !== id));
 		}
 	};
 
