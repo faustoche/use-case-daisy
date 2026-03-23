@@ -9,22 +9,20 @@ interface Props {
   data: Workshop;
 }
 
-// Détail pour chaque atelier
+
 export function WorkshopDetailClient({ data }: Props) {
 
-	// UseState va permettre de mémoriser une valeur c'est un hook
-	// present = liste des ids des participants présents
-	// setPresent = fonction pour modfiier la liste 
-	// [] = valeur de départ avec une liste vide
+	// UseState help memorize a value - hook
+	// present = list of participants present ids
+	// setPresent = function to modify the list
+	// [] = starting with empty list
 	const [present, setPresent] = useState<number[]>([]);
 
+
+	// is Id in the list? Yes -> we keep everyone except the one we click on
+	// No -> copy of the list (... to copy elements)
 	const countAsPresent = (id: number) => {
 
-		// Est-ce que l'id est dans la liste?
-		// pas de push id en react
-		// si oui -> je garde tous les participants sauf celui qu'on ne veut pas
-		// Sinon fait une copie de la liste (on prend tout avec ...)
-		
 		if (present.includes(id)) {
 			const newList = present.filter(participant => participant !== id);
 			setPresent(newList);

@@ -1,4 +1,6 @@
-// Affichage de la liste des ateliers du jour 
+/**
+ * Display workshop as cards
+ */
 
 import Link from "next/link";
 import { Workshop } from "@/types";
