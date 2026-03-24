@@ -61,7 +61,7 @@ The goal of this feature is to allow an artist to take attendance for their dail
 
 • ``` WorkshopDetail.tsx```
 - Manages participants with local state (no server delay)
-- **Why:** optimize ofr instant responsiveness. Hangle toggle state locally for immediate UI for user
+- **Why:** optimize for instant responsiveness. Handle toggle state locally for immediate UI for user
 
 • ``` StatusViews.tsx```
 - Centralized UI states (loading, empty, error)
@@ -77,7 +77,7 @@ The goal of this feature is to allow an artist to take attendance for their dail
 
 - **Mocked data:** application currently relies on local mocked data
 
-- **Production Implementation:** In a real-production environment, I would replace with a database integration (using Supabase) to manage data fetching and data persistence
+- **Production Implementation:** In a real-world production environment, I would replace with a database integration (using Supabase) to manage data fetching and data persistence
 
 ---
 
@@ -91,7 +91,7 @@ The goal of this feature is to allow an artist to take attendance for their dail
 • **User feedback:**
 - Click on the row: visual highlight
 - Check icon: validation confirmation
-- Real-time progress bar: immediat feedback
+- Real-time progress bar: immediate feedback
 
 • **Application states:**
 - Success: normal data rendering
@@ -111,6 +111,6 @@ Deliver a fast, intuitive, mobile-first experience for workshop attendance track
 
 - **React & Next.js (app router):** I discovered component-oriented logic, state management and Next.js routing system. It helped me understand the importance of building components with clear responsibilities.
 
-- **UI Integration:** I learned how to use pre-build components to build rapidly
+- **UI Integration:** I learned how to use pre-built components to build rapidly
 
 - **Deployment:** I experienced intuitive deployment through Vercel 

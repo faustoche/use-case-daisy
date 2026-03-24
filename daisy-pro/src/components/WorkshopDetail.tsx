@@ -15,7 +15,7 @@ interface Props {
 export function WorkshopDetailClient({ data }: Props) {
 
 	const initialPresentIds = data.participants
-		.filter((participant) => participant.status == "present")
+		.filter((participant) => participant.status === "present")
 		.map((participant) => participant.id);
 
 	// UseState help memorize a value
@@ -34,7 +34,7 @@ export function WorkshopDetailClient({ data }: Props) {
 
 		try {
 			const newStatus = present.includes(id) ? "absent" : "present";
-			await updateParticipantStatus(data.id, id, newStatus as any);
+			await updateParticipantStatus(data.id, id, newStatus as "present" | "absent");
 
 			setPresent((prevPresent) => {
 				if (prevPresent.includes(id)) {
