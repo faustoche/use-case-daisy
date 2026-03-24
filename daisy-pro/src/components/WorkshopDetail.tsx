@@ -14,11 +14,12 @@ interface Props {
 
 export function WorkshopDetailClient({ data }: Props) {
 
-	// UseState help memorize a value - hook
-	// present = list of participants present ids
-	// setPresent = function to modify the list
-	// [] = starting with empty list
-	const [present, setPresent] = useState<number[]>([]);
+	const initialPresentIds = data.participants
+		.filter((participant) => participant.status == "present")
+		.map((participant) => participant.id);
+
+	// UseState help memorize a value
+	const [present, setPresent] = useState<number[]>(initialPresentIds);
 	const [loadingId, setLoadingIds] = useState<number[]>([]);
 	const [error, setError] = useState<string | null>(null);
 

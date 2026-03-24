@@ -15,10 +15,10 @@ export const WorkshopMock: Workshop[] = [
 		place: "Studio des Tours",
 		max_participants: 5,
 		participants: [
-			{ id: 101, name: "Martin", first_name: "Marie", status: "pending" },
+			{ id: 101, name: "Martin", first_name: "Marie", status: "present" },
 			{ id: 102, name: "Botrel", first_name: "Léo", status: "pending" },
 			{ id: 103, name: "Souchon", first_name: "Dominique", status: "pending" },
-			{ id: 104, name: "Baugé", first_name: "Émeline", status: "pending" },
+			{ id: 104, name: "Baugé", first_name: "Émeline", status: "present" },
 			{ id: 105, name: "Cortot", first_name: "Manon", status: "pending" },
 		]
 	},
@@ -32,20 +32,20 @@ export const WorkshopMock: Workshop[] = [
 		max_participants: 25,
 		participants: [
 			{ id: 106, name: "Carpentier", first_name: "Axel", status: "pending" },
-			{ id: 107, name: "Léger", first_name: "Clémence", status: "pending" },
+			{ id: 107, name: "Léger", first_name: "Clémence", status: "present" },
 			{ id: 108, name: "Duval", first_name: "Alexia", status: "pending" },
-			{ id: 109, name: "Prudhomme", first_name: "Marc", status: "pending" },
+			{ id: 109, name: "Prudhomme", first_name: "Marc", status: "present" },
 			{ id: 110, name: "Fouché", first_name: "Lou", status: "pending" },
-			{ id: 111, name: "Morel", first_name: "Julien", status: "pending" },
-			{ id: 112, name: "Renaud", first_name: "Sophie", status: "pending" },
-			{ id: 113, name: "Giraud", first_name: "Thomas", status: "pending" },
+			{ id: 111, name: "Morel", first_name: "Julien", status: "present" },
+			{ id: 112, name: "Renaud", first_name: "Sophie", status: "present" },
+			{ id: 113, name: "Giraud", first_name: "Thomas", status: "present" },
 			{ id: 114, name: "Blanchard", first_name: "Camille", status: "pending" },
 			{ id: 115, name: "Barbier", first_name: "Lucas", status: "pending" },
 			{ id: 116, name: "Chevalier", first_name: "Emma", status: "pending" },
 			{ id: 117, name: "Perrin", first_name: "Nathan", status: "pending" },
-			{ id: 118, name: "Marchand", first_name: "Chloé", status: "pending" },
+			{ id: 118, name: "Marchand", first_name: "Chloé", status: "present" },
 			{ id: 119, name: "Colin", first_name: "Hugo", status: "pending" },
-			{ id: 120, name: "Leclerc", first_name: "Manon", status: "pending" },
+			{ id: 120, name: "Leclerc", first_name: "Manon", status: "present" },
 		]
 	},
 	{
@@ -55,13 +55,14 @@ export const WorkshopMock: Workshop[] = [
 		start: "14h00",
 		end: "15h30",
 		place: "Salle de Modelage",
-		max_participants: 5,
+		max_participants: 6,
 		participants: [
-			{ id: 121, name: "Mignot", first_name: "Maxence", status: "pending" },
-			{ id: 122, name: "Maubert", first_name: "Cassandre", status: "pending" },
-			{ id: 123, name: "Le Tutour", first_name: "Léna", status: "pending" },
-			{ id: 124, name: "Crocq", first_name: "Faustine", status: "pending" },
-			{ id: 125, name: "Périer", first_name: "Elsa", status: "pending" },
+			{ id: 121, name: "Maubert", first_name: "Maxence", status: "present" },
+			{ id: 122, name: "Maubert", first_name: "Cassandre", status: "present" },
+			{ id: 123, name: "Crocq", first_name: "Léna", status: "present" },
+			{ id: 124, name: "Crocq", first_name: "Faustine", status: "present" },
+			{ id: 125, name: "Périer", first_name: "Elsa", status: "present" },
+			{ id: 126, name: "Périer", first_name: "Mathilde", status: "present" },
 		]
 	},
 	{
@@ -74,8 +75,8 @@ export const WorkshopMock: Workshop[] = [
 		max_participants: 5,
 		participants: [
 			{ id: 126, name: "Bubost", first_name: "Sophie", status: "pending" },
-			{ id: 127, name: "Mazet", first_name: "Jean", status: "pending" },
-			{ id: 128, name: "Regnard", first_name: "Bruno", status: "pending" },
+			{ id: 127, name: "Mazet", first_name: "Jean", status: "present" },
+			{ id: 128, name: "Regnard", first_name: "Bruno", status: "present" },
 			{ id: 129, name: "Asselin", first_name: "Yann", status: "pending" },
 			{ id: 130, name: "Calleau", first_name: "Sarah", status: "pending" },
 		]
@@ -90,7 +91,7 @@ export const WorkshopMock: Workshop[] = [
 		max_participants: 5,
 		participants: [
 			{ id: 131, name: "Rousseau", first_name: "Alice", status: "pending" },
-			{ id: 132, name: "Garnier", first_name: "Paul", status: "pending" },
+			{ id: 132, name: "Garnier", first_name: "Paul", status: "present" },
 			{ id: 133, name: "Fabre", first_name: "Juliette", status: "pending" },
 			{ id: 134, name: "Vidal", first_name: "Antoine", status: "pending" },
 			{ id: 135, name: "Blanc", first_name: "Claire", status: "pending" },

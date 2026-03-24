@@ -55,23 +55,28 @@ The goal of this feature is to allow an artist to take attendance for their dail
 
 ## Architecture & Component
 
-• ``` WorkshipList.tsx```
+• ``` WorkshopList.tsx```
 - Renders workshop data as cards
-- Receives data thanks to props
+- **Why:** separate from detail view to keep component displaying daily overview
 
-• ``` WorkshipDetail.tsx```
-- Manages participants with local state
-- Optimized for instant responsiveness (no server delay)
+• ``` WorkshopDetail.tsx```
+- Manages participants with local state (no server delay)
+- **Why:** optimize ofr instant responsiveness. Hangle toggle state locally for immediate UI for user
 
 • ``` StatusViews.tsx```
-- Centralized UI states:
-	• loading
-	• empty
-	• error
+- Centralized UI states (loading, empty, error)
+**Why:** prevent code duplication and ensure visual consistency
 
 • ``` actions.ts```
-- Server-side logic
-- Simulates API calls using setTimeout
+- Server-side logic and API simulation
+**Why:** keep React components clean
+
+---
+
+## Data management & Shortcuts
+
+• **Mocked data:** application currently relies on local mocked data
+• **Production Implementation:** In a real-production environment, I would replace with a database integration (using Supabase) to manage data fetching and data persistence
 
 ---
 
@@ -98,3 +103,11 @@ The goal of this feature is to allow an artist to take attendance for their dail
 ## Goal
 
 Deliver a fast, intuitive, mobile-first experience for workshop attendance tracking.
+
+---
+
+## What I learned
+
+• **React & Next.js (app router):** I discovered component-oriented logic, state management and Next.js routing system. It helped me understand the importance of building components with clear responsibilities.
+• **UI Integration:** I learned how to use pre-build components to build rapidly
+• **Deployment:** I experienced intuitive deployment through Vercel 
