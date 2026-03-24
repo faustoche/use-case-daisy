@@ -18,7 +18,7 @@ export const WorkshopMock: Workshop[] = [
 			{ id: 101, name: "Martin", first_name: "Marie", status: "pending" },
 			{ id: 102, name: "Botrel", first_name: "Léo", status: "pending" },
 			{ id: 103, name: "Souchon", first_name: "Dominique", status: "pending" },
-			{ id: 104, name: "Baugé", first_name: "Émeline", status: "pending" },
+			{ id: 104, name: "Baugé", first_name: "Émeline", status: "present" },
 			{ id: 105, name: "Cortot", first_name: "Manon", status: "pending" },
 		]
 	},
