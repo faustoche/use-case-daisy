@@ -75,8 +75,9 @@ The goal of this feature is to allow an artist to take attendance for their dail
 
 ## Data management & Shortcuts
 
-• **Mocked data:** application currently relies on local mocked data
-• **Production Implementation:** In a real-production environment, I would replace with a database integration (using Supabase) to manage data fetching and data persistence
+- **Mocked data:** application currently relies on local mocked data
+
+- **Production Implementation:** In a real-production environment, I would replace with a database integration (using Supabase) to manage data fetching and data persistence
 
 ---
 
@@ -108,6 +109,8 @@ Deliver a fast, intuitive, mobile-first experience for workshop attendance track
 
 ## What I learned
 
-• **React & Next.js (app router):** I discovered component-oriented logic, state management and Next.js routing system. It helped me understand the importance of building components with clear responsibilities.
-• **UI Integration:** I learned how to use pre-build components to build rapidly
-• **Deployment:** I experienced intuitive deployment through Vercel 
+- **React & Next.js (app router):** I discovered component-oriented logic, state management and Next.js routing system. It helped me understand the importance of building components with clear responsibilities.
+
+- **UI Integration:** I learned how to use pre-build components to build rapidly
+
+- **Deployment:** I experienced intuitive deployment through Vercel 
